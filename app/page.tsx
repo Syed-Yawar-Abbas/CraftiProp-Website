@@ -4,6 +4,8 @@ import { FormEvent, MouseEvent, useState } from 'react';
 
 type Mode = 'rent' | 'buy';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 type Property = {
   id: number;
   name: string;
@@ -110,7 +112,7 @@ function BrandMark({ onClick }: { onClick?: () => void }) {
         onClick();
       } : undefined}
     >
-      <img className="brand-mark" src="/favicons/favicon-32x32.png" alt="" aria-hidden="true" />
+      <img className="brand-mark" src={`${basePath}/favicons/favicon-32x32.png`} alt="" aria-hidden="true" />
       <span>crafti<span>prop</span></span>
     </a>
   );
